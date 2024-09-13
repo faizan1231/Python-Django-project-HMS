@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends 'navigationbar.html' %}
+    {% load static %}
+    {% block body %}
+    <!-- Ensure the head section is included in your base template or include it here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Patient</title>
+    <!-- Include Bootstrap CSS if not included in the base template -->
+    <link href="{% static 'path/to/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+        .text-center {
+            color: #43234F; /* Corrected hex color code */
+            font-weight: bold;
+        }
+    </style>
+    
+    <div class="container" style="margin-top:50px">
+        <h2 class="text-center" style="font-family:Impact;">Edit Patient</h2>
+        <br><br>
+        <form method="post" action="{% url 'edit_patient' patient.id %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Patient Name:</label>
+                <input type="text" class="form-control" id="sname" name="sname" value="{{ forms.sname.value }}" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Gender:</label>
+                <input type="text" class="form-control" id="gender" name="gender" value="{{ forms.gender.value }}" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact:</label>
+                <input type="text" class="form-control" id="contact" name="contact" value="{{ forms.contact.value }}" required>
+            </div>
+            <div class="form-group">
+                <label for="special">Specialization:</label>
+                <input type="text" class="form-control" id="address" name="address" value="{{ forms.address.value }}" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+    </div>
+
+    <!-- Display success or error messages if using Django messages framework -->
+    {% if messages %}
+    <script>
+        {% for message in messages %}
+            alert('{{ message }}');
+        {% endfor %}
+    </script>
+    {% endif %}
+    {% endblock %}
+</html>

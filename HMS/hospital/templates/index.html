@@ -1,0 +1,36 @@
+{% extends 'navigationbar.html' %} 
+{% load static %}
+{% block body %}
+<style>
+ .rounded{
+  border-top:8px solid lightblue;
+  border-radius:5px;
+ }
+ .mydivstyle:hover{
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+  transform: translate(-20px);
+}
+</style>
+<div class="container" style="margin-top:50px">
+  <h1 class="text-center"><i class="fa-solid fa-user-pen"></i>Admin Dashboard</h1>
+ <br><br><br><br>
+  <div class="row">
+    <div class="col-sm-4 text-center mydivstyle">
+      <h2 style="color:blue">{{d}}</h2>
+      <a href="{% url 'view_doctor' %}"> <h4 style = "color : red"><i class="fa-solid fa-user-doctor"></i> Total Doctors</h4>
+      <hr class="rounded"></a>
+    </div>
+     
+    <div class="col-sm-4 text-center mydivstyle">
+      <h2 style="color:blue">{{p}}</h2>
+      <a href="{% url 'view_patient' %}"> <h4 style = "color : red"><i class="fa-solid fa-hospital-user"></i>Patients</h4><hr class="rounded"></a>
+    </div>
+
+    <div class="col-sm-4 text-center mydivstyle">
+      <h2 style="color:blue">{{a}}</h2>
+      <a href="{% url 'view_appointment' %}"> <h4 style = "color : red"> <i class="fa-regular fa-calendar-check"></i>Appointments</h4><hr class="rounded"></a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

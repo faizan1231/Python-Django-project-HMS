@@ -1,0 +1,51 @@
+
+<html>
+  
+   {% extends 'navigationbar.html' %} 
+   {% load static %}
+   {% block body%}
+  
+  <head> 
+      <title>Contact Us</title>    
+      <style>
+      .text-center{
+        color:#43234;
+        font-family:bold;
+      }
+      .mydivstyle:hover{
+        box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+        transform: translate(-20px);
+    }
+      </style>
+  </head>
+  <body>
+  <div class="container" style="margin-top:50px">
+  <h1 class="text-center"><i class="fa-duotone fa-solid fa-phone"></i>CONTACT US</h1>
+  <br><br>
+  <div class="row mt-5 text-center"> 
+    <div class="col-lg-3 col-sm-6 mydivstyle">
+        <h4><i class="fa-duotone fa-solid fa-phone"></i>Contact:</h4>
+        <p class="mt-3 font-weight-bold"><a class="text-danger"href="tel:+92 3102098216">+923102098216</a></p>
+  </div>
+
+  <div class="col-lg-3 col-sm-6 mydivstyle">
+    <h4><i class="fas fa-envelope"></i>Send Email:</h4>
+    <p class="mt-3 font-weight-bold"><a class="text-primary"href="mailto:danigmail.com">dani@gmail.com</a></p>
+</div>
+
+
+<div class="col-lg-3 col-sm-6 mydivstyle">
+  <h4><i class="fas fa-address-card"></i>Office Address:</h4>
+  <p class="mt-3 font-weight-bold"><a class="text-success"href="http://maps.google.com/maps?q=Bahawalpur+Pakistan">Bahawalpur,Pakistan</a></p>
+</div>
+
+<div class="col-lg-3 col-sm-6 mydivstyle">
+  <h4><i class="fas fa-address-card"></i>Office Hours:</h4>
+  <p class="mt-3 font-weight-bold text-danger">9:00 AM to 7:00 PM</p>
+</div>
+  </div>
+  {%endblock%}
+  
+
+  </body>
+</html>
